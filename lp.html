@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>理学療法士が診る、3ヶ月集中ボディメイク | BodyNate</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2744;
+      --gold: #c9a84c;
+      --gold-light: #f5e6c0;
+      --white: #ffffff;
+      --gray-light: #f7f7f7;
+      --gray: #888;
+      --text: #2c2c2c;
+      --red: #d94040;
+    }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── HEADER ─── */
+    header {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+    }
+    header span { color: var(--gold); font-weight: 700; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, #f0f4ff 0%, #fff8ec 100%);
+      padding: 60px 20px 70px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(201,168,76,0.15), transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 18px;
+      border-radius: 20px;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(26px, 5vw, 42px);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero-sub {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 32px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+      max-width: 480px;
+      margin: 0 auto 36px;
+      padding: 28px 24px;
+      position: relative;
+    }
+    .hero-card .price-label {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 4px;
+    }
+    .hero-card .price-original {
+      font-size: 14px;
+      color: var(--gray);
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .hero-card .price-main {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+    }
+    .hero-card .price-main small { font-size: 22px; }
+    .hero-card .price-note {
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 6px;
+    }
+    .hero-card .limit-badge {
+      position: absolute;
+      top: -14px; right: 20px;
+      background: var(--red);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .hero-features {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #444;
+    }
+    .hero-feature .icon { font-size: 18px; }
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, #06c755, #00a644);
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 18px 40px;
+      border-radius: 50px;
+      box-shadow: 0 6px 20px rgba(6,199,85,0.4);
+      letter-spacing: 0.05em;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      max-width: 360px;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(6,199,85,0.5); }
+    .btn-secondary {
+      display: inline-block;
+      background: var(--navy);
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 15px 36px;
+      border-radius: 50px;
+      margin-top: 12px;
+      width: 100%;
+      max-width: 360px;
+      transition: opacity 0.2s;
+    }
+    .btn-secondary:hover { opacity: 0.85; }
+    .btn-note { font-size: 12px; color: #777; margin-top: 8px; }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 64px 20px; }
+    .section-inner { max-width: 720px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 900;
+      color: var(--navy);
+      text-align: center;
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+    .section-title em { font-style: normal; color: var(--gold); }
+    .section-desc {
+      text-align: center;
+      color: #555;
+      font-size: 15px;
+      margin-bottom: 40px;
+    }
+    .divider {
+      width: 48px; height: 4px;
+      background: linear-gradient(90deg, var(--gold), #e8c97a);
+      border-radius: 4px;
+      margin: 14px auto 36px;
+    }
+
+    /* ─── PROBLEM ─── */
+    .problem { background: var(--gray-light); }
+    .checklist {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+    .checklist li {
+      background: white;
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .checklist li .check {
+      width: 22px; height: 22px;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .checklist li.checked .check {
+      background: var(--red);
+      border-color: var(--red);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 13px; font-weight: 700;
+    }
+    .problem-cta {
+      text-align: center;
+      margin-top: 36px;
+      padding: 28px;
+      background: linear-gradient(135deg, var(--navy), #2a3f6e);
+      border-radius: 16px;
+      color: white;
+    }
+    .problem-cta p { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+    .problem-cta span { font-size: 13px; opacity: 0.8; }
+
+    /* ─── SOLUTION ─── */
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .solution-card {
+      background: white;
+      border-radius: 14px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-top: 4px solid var(--gold);
+    }
+    .solution-card .icon { font-size: 36px; margin-bottom: 14px; }
+    .solution-card h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .solution-card p { font-size: 13px; color: #666; }
+    .solution-quote {
+      background: var(--gold-light);
+      border-left: 5px solid var(--gold);
+      border-radius: 8px;
+      padding: 20px 24px;
+      font-size: 15px;
+      color: #4a3a10;
+      font-weight: 600;
+      margin-top: 32px;
+    }
+
+    /* ─── RESULTS ─── */
+    .results { background: var(--navy); color: white; }
+    .results .section-title { color: white; }
+    .results .section-desc { color: rgba(255,255,255,0.7); }
+    .result-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .result-card {
+      background: rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 28px 20px;
+      text-align: center;
+      border: 1px solid rgba(201,168,76,0.3);
+    }
+    .result-card .person { font-size: 13px; opacity: 0.7; margin-bottom: 12px; }
+    .result-card .metric {
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .result-card .metric-sub { font-size: 18px; }
+    .result-card .metric-label { font-size: 13px; opacity: 0.8; margin-top: 6px; }
+    .result-card .period { font-size: 12px; opacity: 0.6; margin-top: 4px; }
+    .result-card .comment {
+      font-size: 13px;
+      margin-top: 14px;
+      opacity: 0.85;
+      text-align: left;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 12px;
+    }
+    .rating-bar {
+      text-align: center;
+      margin-top: 48px;
+    }
+    .rating-stars { font-size: 28px; color: var(--gold); letter-spacing: 4px; }
+    .rating-number { font-size: 48px; font-weight: 900; color: white; }
+    .rating-total { font-size: 14px; opacity: 0.6; }
+
+    /* ─── STAFF ─── */
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .staff-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .staff-avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dde3f0, #b8c4df);
+      margin: 0 auto 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 36px;
+    }
+    .staff-name { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .staff-title { font-size: 12px; color: var(--gold); font-weight: 700; margin-bottom: 10px; letter-spacing: 0.05em; }
+    .staff-tags {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-bottom: 10px;
+    }
+    .tag {
+      background: var(--gold-light);
+      color: #7a5e10;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .tag.navy { background: #e6e9f2; color: var(--navy); }
+    .staff-bio { font-size: 13px; color: #666; }
+
+    /* ─── PRICING ─── */
+    .pricing { background: var(--gray-light); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .pricing-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .pricing-card.featured {
+      box-shadow: 0 8px 40px rgba(26,39,68,0.20);
+      transform: scale(1.02);
+    }
+    .pricing-header {
+      padding: 24px 24px 18px;
+      background: var(--gray-light);
+    }
+    .pricing-card.featured .pricing-header {
+      background: linear-gradient(135deg, var(--navy), #2a3f6e);
+      color: white;
+    }
+    .pricing-name { font-size: 14px; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .pricing-card.featured .pricing-name { color: var(--gold); }
+    .pricing-price { font-size: 40px; font-weight: 900; color: var(--navy); }
+    .pricing-card.featured .pricing-price { color: white; }
+    .pricing-price small { font-size: 18px; }
+    .pricing-original { font-size: 14px; text-decoration: line-through; color: #aaa; margin-top: 2px; }
+    .pricing-body { padding: 24px; }
+    .pricing-list { list-style: none; display: grid; gap: 10px; }
+    .pricing-list li {
+      display: flex; align-items: flex-start; gap: 8px; font-size: 14px;
+    }
+    .pricing-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .pricing-card.featured .btn-primary { width: 100%; margin-top: 20px; font-size: 15px; padding: 15px; }
+    .pricing-cta { padding: 0 24px 24px; }
+
+    /* ─── FAQ ─── */
+    .faq-list { display: grid; gap: 16px; }
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .faq-q {
+      display: flex; align-items: center; gap: 12px;
+      padding: 18px 20px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--navy);
+    }
+    .faq-q .q-badge {
+      background: var(--gold);
+      color: white;
+      font-size: 13px;
+      font-weight: 900;
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .faq-a {
+      padding: 0 20px 18px 60px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* ─── FINAL CTA ─── */
+    .final-cta {
+      background: linear-gradient(135deg, var(--navy) 0%, #0d1a35 100%);
+      color: white;
+      text-align: center;
+      padding: 72px 20px;
+    }
+    .final-cta .section-title { color: white; margin-bottom: 10px; }
+    .final-cta .section-desc { color: rgba(255,255,255,0.7); }
+    .final-cta-box {
+      max-width: 480px;
+      margin: 32px auto 0;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 16px;
+      padding: 32px 24px;
+    }
+    .no-sales {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 20px;
+    }
+    .no-sales::before { content: '🛡'; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #111;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 12px;
+    }
+    footer a { color: rgba(255,255,255,0.5); margin: 0 8px; }
+
+    /* ─── FLOATING CTA ─── */
+    .floating-cta {
+      position: fixed;
+      bottom: 20px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      background: linear-gradient(135deg, #06c755, #00a644);
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 15px 24px;
+      border-radius: 50px;
+      box-shadow: 0 8px 32px rgba(6,199,85,0.45);
+      cursor: pointer;
+      display: none;
+      letter-spacing: 0.03em;
+    }
+    .floating-cta.visible { display: block; }
+    .floating-cta span { font-size: 12px; font-weight: 400; opacity: 0.85; display: block; margin-top: 2px; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 24px; }
+      .pricing-card.featured { transform: none; }
+      .result-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ▸ HEADER -->
+<header>
+  <span>🔥 今月の体験枠 残り3名</span> ｜ 初回体験 通常¥10,000 → <span>¥2,200</span>
+</header>
+
+<!-- ▸ HERO -->
+<section class="hero">
+  <div class="section-inner">
+    <span class="hero-badge">国家資格・理学療法士が担当</span>
+    <h1>理学療法士が診る、<br><em>3ヶ月集中</em>ボディメイク</h1>
+    <p class="hero-sub">
+      ジムでも整体でも結果が出なかった方へ。<br>
+      医療の知識と筋力トレーニングを組み合わせた、あなただけのプログラムで理想の身体へ。
+    </p>
+
+    <div class="hero-card">
+      <span class="limit-badge">月5名限定</span>
+      <div class="price-label">初回体験価格</div>
+      <div class="price-original">通常 ¥10,000</div>
+      <div class="price-main"><small>¥</small>2,200<small>（税込）</small></div>
+      <div class="price-note">※ 強引な勧誘は一切ございません</div>
+    </div>
+
+    <div class="hero-features">
+      <div class="hero-feature"><span class="icon">🏥</span>医療×トレーニング</div>
+      <div class="hero-feature"><span class="icon">📋</span>完全個別プログラム</div>
+      <div class="hero-feature"><span class="icon">🔒</span>安全・安心</div>
+      <div class="hero-feature"><span class="icon">⭐</span>Googleレビュー4.9</div>
+    </div>
+
+    <div>
+      <a href="#reserve" class="btn-primary">LINEで今すぐ予約する</a><br>
+      <a href="#pricing" class="btn-secondary">料金・プランを見る</a>
+      <p class="btn-note">＊ 予約後に強引な勧誘は一切ありません</p>
+    </div>
+  </div>
+</section>
+
+<!-- ▸ PROBLEM -->
+<section class="problem">
+  <div class="section-inner">
+    <div class="section-label">PROBLEM</div>
+    <h2 class="section-title">そのダイエット、<em>もう疲れた</em>んじゃないですか？</h2>
+    <div class="divider"></div>
+    <p class="section-desc">こんなお悩みをお持ちではありませんか？</p>
+
+    <ul class="checklist">
+      <li class="checked"><div class="check">✓</div><span>ジムに通ったけど何度も挫折してしまった</span></li>
+      <li class="checked"><div class="check">✓</div><span>食事制限を頑張っても体重が落ちない</span></li>
+      <li class="checked"><div class="check">✓</div><span>産後から体型が戻らず自信をなくしている</span></li>
+      <li class="checked"><div class="check">✓</div><span>腰痛・膝痛があって激しい運動ができない</span></li>
+      <li class="checked"><div class="check">✓</div><span>体重より見た目・シルエットを変えたい</span></li>
+      <li class="checked"><div class="check">✓</div><span>自己流でやってきたが限界を感じている</span></li>
+    </ul>
+
+    <div class="problem-cta">
+      <p>1つでも当てはまるなら、私たちにお任せください</p>
+      <span>理学療法士があなたの身体を徹底的に評価し、最適な方法で変えていきます</span>
+    </div>
+  </div>
+</section>
+
+<!-- ▸ SOLUTION -->
+<section class="solution">
+  <div class="section-inner">
+    <div class="section-label">SOLUTION</div>
+    <h2 class="section-title"><em>医療のプロ</em>が、あなたを変える</h2>
+    <div class="divider"></div>
+    <p class="section-desc">
+      一般的なジムトレーナーと違い、理学療法士は身体の構造・動作・疾患に関する国家資格保有者。<br>
+      あなたの身体を医療的視点で評価した上でプログラムを設計します。
+    </p>
+
+    <div class="solution-grid">
+      <div class="solution-card">
+        <div class="icon">🔍</div>
+        <h3>徹底した身体評価</h3>
+        <p>姿勢・可動域・筋力・動作パターンを医療的観点から評価。あなたの身体の「本当の課題」を発見します。</p>
+      </div>
+      <div class="solution-card">
+        <div class="icon">📐</div>
+        <h3>完全オーダーメイド</h3>
+        <p>テンプレートは一切なし。評価結果をもとに、あなただけのトレーニングプログラムを設計します。</p>
+      </div>
+      <div class="solution-card">
+        <div class="icon">🦴</div>
+        <h3>整体×トレーニング</h3>
+        <p>歪みの矯正と筋力向上を同時並行で行う独自メソッド。身体の土台から整えます。</p>
+      </div>
+      <div class="solution-card">
+        <div class="icon">🥗</div>
+        <h3>食事サポート付き</h3>
+        <p>無理な食事制限ではなく、身体の変化を加速させる食事の考え方をお伝えします。</p>
+      </div>
+    </div>
+
+    <div class="solution-quote">
+      💬「体重を落とすことよりも、身体の機能を高めて、見た目と動きの両方を変えることが大切です。それが私たちのアプローチです。」
+    </div>
+  </div>
+</section>
+
+<!-- ▸ RESULTS -->
+<section class="results">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--gold)">RESULTS</div>
+    <h2 class="section-title">お客様の<em>リアルな変化</em></h2>
+    <div class="divider"></div>
+    <p class="section-desc">3ヶ月プログラムの実際の結果です</p>
+
+    <div class="result-cards">
+      <div class="result-card">
+        <div class="person">30代 女性（産後2年）</div>
+        <div class="metric">−<span class="metric-sub">12</span>cm</div>
+        <div class="metric-label">ウエスト</div>
+        <div class="period">3ヶ月間</div>
+        <div class="comment">「産後ずっと悩んでいたお腹まわりが劇的に変わりました。体重より見た目が変わったことが嬉しいです。」</div>
+      </div>
+      <div class="result-card">
+        <div class="person">40代 男性（デスクワーク）</div>
+        <div class="metric">−<span class="metric-sub">8</span>kg</div>
+        <div class="metric-label">体重</div>
+        <div class="period">3ヶ月間</div>
+        <div class="comment">「腰痛もあってずっと運動できなかったのに、安全にトレーニングできて体重も落ちました。」</div>
+      </div>
+      <div class="result-card">
+        <div class="person">20代 女性（ブライダル）</div>
+        <div class="metric">−<span class="metric-sub">9</span>cm</div>
+        <div class="metric-label">ヒップ</div>
+        <div class="period">2.5ヶ月間</div>
+        <div class="comment">「結婚式に向けて理想のドレス姿になれました。諦めずに相談してよかったです！」</div>
+      </div>
+    </div>
+
+    <div class="rating-bar">
+      <div class="rating-stars">★★★★★</div>
+      <div class="rating-number">4.9</div>
+      <div class="rating-total">Googleレビュー 87件の平均評価</div>
+    </div>
+  </div>
+</section>
+
+<!-- ▸ STAFF -->
+<section class="staff">
+  <div class="section-inner">
+    <div class="section-label">STAFF</div>
+    <h2 class="section-title">担当<em>理学療法士</em>のご紹介</h2>
+    <div class="divider"></div>
+    <p class="section-desc">全スタッフが国家資格「理学療法士」の有資格者です</p>
+
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="staff-avatar">👨</div>
+        <div class="staff-name">山田 健太</div>
+        <div class="staff-title">理学療法士 / トレーニング部門長</div>
+        <div class="staff-tags">
+          <span class="tag">整形外科 10年</span>
+          <span class="tag navy">アスリート指導</span>
+        </div>
+        <p class="staff-bio">整形外科クリニックでの10年間の臨床経験後、スポーツ選手のコンディショニングを担当。怪我を抱えた方でも安全にトレーニングできるプログラムが得意。</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar">👩</div>
+        <div class="staff-name">佐藤 美咲</div>
+        <div class="staff-title">理学療法士 / 女性専門</div>
+        <div class="staff-tags">
+          <span class="tag">産後リハビリ</span>
+          <span class="tag navy">ブライダル</span>
+        </div>
+        <p class="staff-bio">女性特有の身体の悩みに特化した専門家。産後の身体の変化から、ブライダル向けのボディメイクまで幅広く対応。</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar">👨‍⚕️</div>
+        <div class="staff-name">田中 拓也</div>
+        <div class="staff-title">理学療法士 / 慢性疾患対応</div>
+        <div class="staff-tags">
+          <span class="tag">腰痛・膝痛</span>
+          <span class="tag navy">シニア対応</span>
+        </div>
+        <p class="staff-bio">慢性痛を抱える方への運動指導を専門とする。「痛みがあっても身体を変えられる」をモットーに、安全第一のアプローチを提供。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ▸ PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-inner">
+    <div class="section-label">PRICING</div>
+    <h2 class="section-title">料金・プラン</h2>
+    <div class="divider"></div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <div class="pricing-name">初回体験</div>
+          <div class="pricing-price"><small>¥</small>2,200<small style="font-size:14px"> 税込</small></div>
+          <div class="pricing-original">通常 ¥10,000</div>
+        </div>
+        <div class="pricing-body">
+          <ul class="pricing-list">
+            <li>身体評価・姿勢分析（60分）</li>
+            <li>カウンセリング・目標設定</li>
+            <li>体験トレーニング</li>
+            <li>プログラム提案</li>
+          </ul>
+        </div>
+        <div class="pricing-cta">
+          <a href="#reserve" class="btn-primary" style="font-size:14px; padding: 13px 20px; max-width:100%; display:block; text-align:center; border-radius:50px;">予約する</a>
+        </div>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-header">
+          <div class="pricing-name">3ヶ月集中プログラム</div>
+          <div class="pricing-price"><small>¥</small>119,800<small style="font-size:14px; color:rgba(255,255,255,0.7)"> 税込</small></div>
+          <div class="pricing-original" style="color:rgba(255,255,255,0.4)">通常 ¥298,000</div>
+        </div>
+        <div class="pricing-body">
+          <ul class="pricing-list" style="color:white">
+            <li>週2回・全24セッション</li>
+            <li>完全個別プログラム設計</li>
+            <li>整体＋トレーニング複合ケア</li>
+            <li>食事・生活習慣サポート</li>
+            <li>LINEでの無制限質問対応</li>
+            <li>身体評価（月1回）</li>
+            <li>卒業後フォローアップ1回</li>
+          </ul>
+          <a href="#reserve" class="btn-primary" style="display:block; text-align:center; margin-top:20px; font-size:15px; padding:15px;">今すぐ申し込む</a>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center; font-size:13px; color:#888; margin-top:20px;">
+      ※ 分割払いも対応可能です。詳細はご相談ください。
+    </p>
+  </div>
+</section>
+
+<!-- ▸ FAQ -->
+<section class="faq">
+  <div class="section-inner">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">よくある<em>ご質問</em></h2>
+    <div class="divider"></div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q"><span class="q-badge">Q</span>運動が苦手・初心者でも大丈夫ですか？</div>
+        <div class="faq-a">はい、まったく問題ありません。運動未経験の方、長年運動をしていない方も多くいらっしゃいます。お一人おひとりの体力・体調に合わせてプログラムを設計しますのでご安心ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="q-badge">Q</span>腰痛・膝痛があっても参加できますか？</div>
+        <div class="faq-a">ご参加いただけます。当スタジオの理学療法士は整形外科クリニック出身のスタッフも在籍しており、慢性痛をお持ちの方への運動指導が得意です。初回評価で詳しくヒアリングした上でご提案します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="q-badge">Q</span>強引な勧誘はありますか？</div>
+        <div class="faq-a">一切ございません。体験後に「いかがでしたか？」とお聞きすることはありますが、その場で何度もプランを勧めたり、断りにくい状況を作ったりすることは絶対にしません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="q-badge">Q</span>食事制限は必要ですか？</div>
+        <div class="faq-a">極端な食事制限はお勧めしていません。身体の変化を加速させるための食事の「考え方」をお伝えし、無理なく継続できる食生活のサポートをします。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="q-badge">Q</span>産後でも参加できますか？</div>
+        <div class="faq-a">はい、産後のボディメイクを希望される方も多くいらっしゃいます。産後の身体の状態は一般の方と異なるため、女性専門スタッフが専用のプログラムで対応します。産後6週以降を目安にご相談ください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ▸ FINAL CTA -->
+<section class="final-cta" id="reserve">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--gold)">RESERVE</div>
+    <h2 class="section-title">まずは<em>体験</em>から始めよう</h2>
+    <div class="divider"></div>
+    <p class="section-desc">今月の体験枠は残り3名です。お気軽にご相談ください。</p>
+
+    <div class="final-cta-box">
+      <div class="no-sales">強引な勧誘は一切ありません</div>
+      <div style="font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:8px;">初回体験価格</div>
+      <div style="font-size:42px; font-weight:900; color:var(--gold); margin-bottom:4px;">¥2,200</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.5); margin-bottom:24px;">通常¥10,000のところ</div>
+      <a href="#" class="btn-primary" style="display:block; text-align:center;">LINEで今すぐ予約する</a>
+      <p class="btn-note" style="color:rgba(255,255,255,0.4)">24時間受付中 ｜ 返信は当日〜翌営業日</p>
+    </div>
+  </div>
+</section>
+
+<!-- ▸ FOOTER -->
+<footer>
+  <p style="margin-bottom:10px;">
+    <a href="#">プライバシーポリシー</a>
+    <a href="#">特定商取引法に基づく表記</a>
+    <a href="#">お問い合わせ</a>
+  </p>
+  <p>© 2024 BodyNate. All Rights Reserved.</p>
+</footer>
+
+<!-- ▸ FLOATING CTA -->
+<div class="floating-cta" id="floatingCta">
+  LINEで今すぐ予約する（¥2,200）
+  <span>月5名限定 ｜ 残り3名</span>
+</div>
+
+<script>
+  const floatingCta = document.getElementById('floatingCta');
+  window.addEventListener('scroll', () => {
+    floatingCta.classList.toggle('visible', window.scrollY > 500);
+  });
+</script>
+
+</body>
+</html>
