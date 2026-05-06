@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>整体 × ピラティス | BodyNate 四条烏丸店</title>
+  <meta name="description" content="理学療法士在籍の女性専用サロン。整体で骨格を整え、ピラティスで体幹を鍛える。京都・四条烏丸で「動ける、痛みのない体」を。" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --charcoal:     #2A2A2A;
+      --charcoal-mid: #3D3D3D;
+      --charcoal-soft:#555555;
+      --rose:         #C4747E;
+      --rose-mid:     #A85C66;
+      --rose-light:   #EDD4D7;
+      --rose-pale:    #FBF3F4;
+      --gold:         #C9954A;
+      --gold-mid:     #A87A38;
+      --gold-light:   #EDD9B8;
+      --gold-pale:    #FBF7EF;
+      --off-white:    #FAF8F6;
+      --white:        #FFFFFF;
+      --text:         #2A2A2A;
+      --text-mid:     #555555;
+      --text-light:   #888888;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', Georgia, serif;
+      color: var(--text);
+      background: var(--off-white);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 300;
+      background: var(--charcoal);
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      border-bottom: 1px solid rgba(201,149,74,0.2);
+    }
+    .nav-logo {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .nav-logo-accent { color: var(--rose); }
+    .nav-logo-sub {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.35);
+      font-weight: 400;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-back {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--rose); }
+    .nav-cta {
+      background: var(--rose);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 9px 20px;
+      border-radius: 3px;
+      letter-spacing: 0.08em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--rose-mid); }
+
+    /* ─── HERO ─── */
+    .hero {
+      margin-top: 64px;
+      min-height: 94vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(to right,
+          rgba(42,42,42,0.92) 0%,
+          rgba(42,42,42,0.72) 52%,
+          rgba(42,42,42,0.18) 100%),
+        url('images/hero2.png') center 35% / cover no-repeat;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 64px 100px;
+    }
+
+    /* botanical decoration */
+    .hero-deco {
+      position: absolute;
+      right: 48px; bottom: 48px;
+      width: 300px; opacity: 0.06;
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 640px; }
+
+    .hero-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid rgba(201,149,74,0.6);
+      color: var(--gold-light);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      padding: 5px 16px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .hero-badge.rose {
+      border-color: rgba(196,116,126,0.6);
+      color: var(--rose-light);
+    }
+    .hero-badge-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .hero-badge.rose .hero-badge-dot { background: var(--rose); }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 58px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.45;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .hero h1 .en {
+      display: block;
+      font-size: clamp(10px, 1.1vw, 12px);
+      letter-spacing: 0.32em;
+      color: rgba(255,255,255,0.35);
+      font-weight: 400;
+      margin-bottom: 12px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .hero h1 .accent-rose { color: var(--rose); }
+    .hero h1 .accent-gold { color: var(--gold); }
+
+    .hero-divider {
+      width: 44px; height: 2px;
+      background: linear-gradient(to right, var(--rose), var(--gold));
+      margin: 26px 0;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.62);
+      line-height: 2.2;
+      margin-bottom: 48px;
+    }
+
+    .hero-cta-wrap {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 36px;
+    }
+
+    .btn-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #06C755;
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 17px 40px;
+      letter-spacing: 0.08em;
+      border-radius: 4px;
+      transition: all 0.3s;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .btn-line:hover { background: #05b04c; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(6,199,85,0.3); }
+
+    .btn-ghost {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.65);
+      font-size: 13px;
+      padding: 14px 32px;
+      letter-spacing: 0.1em;
+      transition: all 0.3s;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      border-radius: 3px;
+    }
+    .btn-ghost:hover { border-color: var(--rose); color: var(--rose); }
+
+    .hero-trial {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(201,149,74,0.12);
+      border: 1px solid rgba(201,149,74,0.35);
+      padding: 12px 24px;
+      border-radius: 4px;
+    }
+    .hero-trial-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--gold-light);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .hero-trial-price {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .hero-trial-orig {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      text-decoration: line-through;
+    }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      background: var(--charcoal-mid);
+      padding: 22px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(201,149,74,0.15);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .trust-icon {
+      width: 32px; height: 32px;
+      background: rgba(201,149,74,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .trust-text {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.08em;
+      line-height: 1.5;
+    }
+    .trust-text strong {
+      display: block;
+      font-size: 13px;
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 96px 24px; }
+    .section-inner { max-width: 920px; margin: 0 auto; }
+    .section-inner-sm { max-width: 760px; margin: 0 auto; }
+
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      color: var(--rose);
+      text-align: center;
+      margin-bottom: 14px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      text-transform: uppercase;
+    }
+    .eyebrow.gold { color: var(--gold); }
+
+    .section-title {
+      font-size: clamp(22px, 3.5vw, 36px);
+      font-weight: 700;
+      color: var(--charcoal);
+      text-align: center;
+      line-height: 1.55;
+      margin-bottom: 10px;
+      letter-spacing: 0.04em;
+    }
+    .section-title .ar { color: var(--rose); }
+    .section-title .ag { color: var(--gold); }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 18px auto 56px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      display: block;
+      width: 52px; height: 1px;
+      background: var(--rose-light);
+    }
+    .divider-gem {
+      width: 8px; height: 8px;
+      background: var(--rose);
+      transform: rotate(45deg);
+    }
+
+    /* ─── PHILOSOPHY BAND ─── */
+    .philosophy {
+      background: var(--charcoal);
+      padding: 80px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .philosophy::before, .philosophy::after {
+      content: '';
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      opacity: 0.04;
+    }
+    .philosophy::before { left: -60px; background: var(--rose); }
+    .philosophy::after  { right: -60px; background: var(--gold); }
+
+    .philosophy-kana {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: rgba(255,255,255,0.3);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      margin-bottom: 22px;
+    }
+    .philosophy-quote {
+      font-size: clamp(20px, 3.2vw, 34px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.8;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+    .philosophy-quote .ar { color: var(--rose); }
+    .philosophy-quote .ag { color: var(--gold); }
+    .philosophy-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.1em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+
+    /* ─── PAIN ─── */
+    .pain { background: var(--white); }
+    .pain-intro {
+      text-align: center;
+      font-size: 16px;
+      color: var(--text-mid);
+      margin-bottom: 44px;
+      line-height: 2.0;
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-bottom: 52px;
+    }
+    .pain-card {
+      background: var(--rose-pale);
+      border: 1px solid var(--rose-light);
+      border-left: 3px solid var(--rose);
+      padding: 20px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      border-radius: 0 3px 3px 0;
+    }
+    .pain-check {
+      width: 20px; height: 20px;
+      background: var(--rose);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .pain-check::after {
+      content: '✓';
+      color: white;
+      font-size: 11px;
+      font-family: sans-serif;
+      font-weight: 700;
+    }
+    .pain-text { font-size: 15px; line-height: 1.6; }
+
+    .pain-answer {
+      background: var(--charcoal);
+      border-radius: 4px;
+      padding: 32px 40px;
+      text-align: center;
+    }
+    .pain-answer-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.4);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      margin-bottom: 14px;
+    }
+    .pain-answer-text {
+      font-size: clamp(17px, 2.5vw, 22px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.7;
+      letter-spacing: 0.04em;
+    }
+    .pain-answer-text .ar { color: var(--rose); }
+    .pain-answer-text .ag { color: var(--gold); }
+
+    /* ─── SYNERGY ─── */
+    .synergy { background: var(--off-white); }
+    .synergy-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 52px;
+    }
+    .synergy-card {
+      background: var(--white);
+      border-radius: 4px;
+      padding: 36px 28px;
+      box-shadow: 0 2px 20px rgba(42,42,42,0.06);
+    }
+    .synergy-card.rose { border-top: 4px solid var(--rose); }
+    .synergy-card.gold { border-top: 4px solid var(--gold); }
+    .synergy-card-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      color: var(--rose);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      margin-bottom: 12px;
+    }
+    .synergy-card.gold .synergy-card-eyebrow { color: var(--gold); }
+    .synergy-card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+      letter-spacing: 0.04em;
+    }
+    .synergy-card-list {
+      list-style: none;
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 2.1;
+    }
+    .synergy-card-list li::before { content: '— '; color: var(--rose); }
+    .synergy-card.gold .synergy-card-list li::before { color: var(--gold); }
+
+    .synergy-plus {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      flex-shrink: 0;
+    }
+    .synergy-plus-text {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      line-height: 1;
+    }
+
+    .synergy-result {
+      background: var(--charcoal);
+      border-radius: 4px;
+      padding: 36px 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 32px;
+      text-align: center;
+    }
+    .synergy-result-item {}
+    .synergy-result-num {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--gold);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .synergy-result-num span {
+      font-size: 16px;
+      color: rgba(201,149,74,0.7);
+    }
+    .synergy-result-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.08em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+
+    /* ─── STAFF ─── */
+    .staff { background: var(--white); }
+    .staff-inner {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .staff-photo {
+      aspect-ratio: 3/4;
+      background: linear-gradient(145deg, var(--rose-pale) 0%, var(--rose-light) 100%);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: var(--rose);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+    .staff-photo-bar {
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: linear-gradient(to bottom, var(--rose), var(--gold));
+    }
+    .staff-photo-icon { font-size: 40px; }
+
+    .staff-license {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-pale);
+      border: 1px solid var(--gold-light);
+      padding: 7px 18px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+    .staff-license-icon {
+      width: 16px; height: 16px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .staff-license-icon::after {
+      content: '★';
+      color: white;
+      font-size: 9px;
+    }
+    .staff-license-text {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--gold-mid);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      font-weight: 700;
+    }
+
+    .staff-name {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .staff-name-en {
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      color: var(--text-light);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      margin-bottom: 20px;
+    }
+    .staff-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .staff-tag {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--rose-mid);
+      border: 1px solid var(--rose-light);
+      padding: 4px 12px;
+      border-radius: 2px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .staff-message {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 2.0;
+    }
+    .staff-message .quote {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--charcoal);
+      display: block;
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    .staff-message .quote .ar { color: var(--rose); }
+
+    /* ─── VOICE ─── */
+    .voice { background: var(--off-white); }
+    .voice-stars {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+    .voice-stars-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--white);
+      border: 1px solid var(--gold-light);
+      padding: 12px 28px;
+      border-radius: 40px;
+      margin-bottom: 10px;
+    }
+    .star { color: var(--gold); font-size: 18px; }
+    .voice-stars-score {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--charcoal);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      letter-spacing: 0.02em;
+    }
+    .voice-stars-label {
+      font-size: 12px;
+      color: var(--text-light);
+      letter-spacing: 0.08em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .voice-card {
+      background: var(--white);
+      border-radius: 4px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 16px rgba(42,42,42,0.05);
+      position: relative;
+    }
+    .voice-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px; left: 20px;
+      font-size: 56px;
+      color: var(--rose-light);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .voice-stars-mini {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 14px;
+    }
+    .star-mini { color: var(--gold); font-size: 13px; }
+    .voice-tag {
+      display: inline-block;
+      background: var(--rose-pale);
+      color: var(--rose-mid);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      padding: 3px 10px;
+      border-radius: 2px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      margin-bottom: 14px;
+    }
+    .voice-text {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--text-mid);
+      margin-bottom: 18px;
+      padding-top: 8px;
+    }
+    .voice-result {
+      background: var(--gold-pale);
+      border-left: 3px solid var(--gold);
+      padding: 8px 14px;
+      font-size: 13px;
+      color: var(--gold-mid);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .voice-meta {
+      font-size: 12px;
+      color: var(--text-light);
+      letter-spacing: 0.06em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+
+    /* ─── MID CTA ─── */
+    .mid-cta {
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-mid) 100%);
+      padding: 72px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .mid-cta::before {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: var(--rose);
+      opacity: 0.04;
+    }
+    .mid-cta-title {
+      font-size: clamp(20px, 3vw, 30px);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+      letter-spacing: 0.04em;
+    }
+    .mid-cta-title .ar { color: var(--rose); }
+    .mid-cta-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 36px;
+      line-height: 2.0;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      letter-spacing: 0.06em;
+    }
+    .mid-cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .btn-line-mid {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #06C755;
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 17px 44px;
+      letter-spacing: 0.08em;
+      border-radius: 4px;
+      transition: all 0.3s;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .btn-line-mid:hover { background: #05b04c; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(6,199,85,0.3); }
+
+    /* ─── MENU ─── */
+    .menu { background: var(--white); }
+    .menu-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 36px;
+      border-bottom: 2px solid var(--rose-light);
+    }
+    .menu-tab {
+      padding: 14px 32px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-light);
+      letter-spacing: 0.1em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+    }
+    .menu-tab.active { color: var(--rose); border-bottom-color: var(--rose); }
+    .menu-tab:hover:not(.active) { color: var(--charcoal); }
+
+    .menu-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+    .menu-table thead th {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.7);
+      padding: 13px 20px;
+      text-align: left;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      font-weight: 400;
+    }
+    .menu-table tbody td {
+      padding: 20px;
+      border-bottom: 1px solid var(--rose-light);
+      vertical-align: top;
+    }
+    .menu-table tbody tr:last-child td { border-bottom: none; }
+    .menu-table tbody tr:hover td { background: var(--rose-pale); }
+    .menu-name { font-weight: 700; color: var(--charcoal); margin-bottom: 4px; }
+    .menu-desc { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+    .menu-badge-rec {
+      display: inline-block;
+      background: var(--rose);
+      color: white;
+      font-size: 10px;
+      padding: 2px 9px;
+      border-radius: 2px;
+      margin-left: 8px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      letter-spacing: 0.06em;
+      vertical-align: middle;
+    }
+    .menu-badge-new {
+      display: inline-block;
+      background: var(--gold-light);
+      color: var(--gold-mid);
+      font-size: 10px;
+      padding: 2px 9px;
+      border-radius: 2px;
+      margin-left: 8px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      letter-spacing: 0.06em;
+      vertical-align: middle;
+    }
+    .menu-time {
+      font-size: 14px;
+      color: var(--text-light);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .menu-price-wrap {}
+    .menu-price-orig {
+      font-size: 12px;
+      color: var(--text-light);
+      text-decoration: line-through;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      margin-bottom: 2px;
+    }
+    .menu-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--rose-mid);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .menu-price.gold { color: var(--gold-mid); }
+    .menu-note {
+      font-size: 12px;
+      color: var(--text-light);
+      text-align: right;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── FLOW ─── */
+    .flow { background: var(--off-white); }
+    .flow-wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0;
+      position: relative;
+    }
+    .flow-step {
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+    .flow-step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -10px;
+      top: 28px;
+      font-size: 18px;
+      color: var(--rose-light);
+      font-family: sans-serif;
+    }
+    .flow-num-circle {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+    }
+    .flow-num-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--rose);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .flow-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+    .flow-desc {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    /* ─── FAQ ─── */
+    .faq { background: var(--white); }
+    .faq-list {}
+    .faq-item {
+      border-bottom: 1px solid var(--rose-light);
+    }
+    .faq-q {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 22px 0;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+    .faq-q-badge {
+      width: 26px; height: 26px;
+      background: var(--rose);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .faq-a {
+      padding: 0 0 22px 42px;
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.9;
+    }
+
+    /* ─── MAIN CTA ─── */
+    .main-cta {
+      background: var(--charcoal);
+      padding: 96px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .main-cta-deco {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(196,116,126,0.06) 0%, transparent 60%),
+        radial-gradient(circle at 80% 50%, rgba(201,149,74,0.06) 0%, transparent 60%);
+    }
+    .main-cta-inner { position: relative; z-index: 1; }
+    .main-cta-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      color: var(--rose-light);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      margin-bottom: 20px;
+    }
+    .main-cta-title {
+      font-size: clamp(24px, 3.5vw, 40px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.6;
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    .main-cta-title .ar { color: var(--rose); }
+    .main-cta-title .ag { color: var(--gold); }
+    .main-cta-divider {
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; margin: 20px auto 32px;
+    }
+    .main-cta-divider::before, .main-cta-divider::after {
+      content: ''; display: block;
+      width: 44px; height: 1px;
+      background: rgba(237,212,215,0.3);
+    }
+    .main-cta-divider-dot {
+      width: 6px; height: 6px;
+      background: var(--rose); border-radius: 50%;
+    }
+    .main-cta-price-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,149,74,0.3);
+      padding: 18px 36px;
+      border-radius: 4px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .main-cta-price-label {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      color: var(--gold-light);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .main-cta-price-orig {
+      font-size: 15px;
+      color: rgba(255,255,255,0.25);
+      text-decoration: line-through;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .main-cta-arrow { color: var(--gold); font-size: 18px; }
+    .main-cta-price-new {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--gold);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+    .main-cta-price-new sup { font-size: 18px; }
+    .main-cta-price-new sub { font-size: 15px; vertical-align: bottom; }
+    .main-cta-btns {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .btn-line-lg {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #06C755;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 20px 52px;
+      letter-spacing: 0.08em;
+      border-radius: 4px;
+      transition: all 0.3s;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .btn-line-lg:hover { background: #05b04c; transform: translateY(-3px); box-shadow: 0 12px 36px rgba(6,199,85,0.35); }
+    .main-cta-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.08em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      line-height: 2.0;
+    }
+
+    /* ─── ACCESS ─── */
+    .access { background: var(--off-white); }
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .access-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 22px;
+      letter-spacing: 0.04em;
+    }
+    .access-list { list-style: none; }
+    .access-list li {
+      display: flex;
+      gap: 22px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rose-light);
+      font-size: 15px;
+    }
+    .al {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: var(--text-light);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      white-space: nowrap;
+      min-width: 58px;
+      margin-top: 2px;
+    }
+    .av { color: var(--charcoal); line-height: 1.8; }
+    .access-map {
+      border-radius: 4px;
+      background: var(--rose-pale);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 13px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      letter-spacing: 0.1em;
+      overflow: hidden;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--charcoal);
+      padding: 44px 24px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .footer-logo span { color: var(--rose); }
+    .footer-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.14em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      margin-bottom: 22px;
+    }
+    .footer-back {
+      display: inline-block;
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 8px 22px;
+      border-radius: 2px;
+      letter-spacing: 0.1em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      margin-bottom: 24px;
+      transition: all 0.2s;
+    }
+    .footer-back:hover { color: var(--rose); border-color: var(--rose); }
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255,255,255,0.18);
+      letter-spacing: 0.1em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+
+    /* ─── FLOAT BAR ─── */
+    .float-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 400;
+      background: rgba(42,42,42,0.97);
+      backdrop-filter: blur(8px);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+      border-top: 1px solid rgba(201,149,74,0.2);
+    }
+    .float-bar.visible { transform: translateY(0); }
+    .float-bar-info {
+      text-align: right;
+    }
+    .float-bar-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.35);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .float-bar-price {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    /* ─── 3 CTA BUTTONS ─── */
+    .btn-reserve-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--rose) 0%, var(--rose-mid) 100%);
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 20px 52px;
+      letter-spacing: 0.1em;
+      border-radius: 4px;
+      transition: all 0.3s;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      box-shadow: 0 4px 20px rgba(196,116,126,0.35);
+      min-width: 260px;
+    }
+    .btn-reserve-main:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(196,116,126,0.45); }
+
+    .btn-reserve {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: transparent;
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 15px 36px;
+      letter-spacing: 0.1em;
+      border-radius: 4px;
+      border: 2px solid rgba(255,255,255,0.35);
+      transition: all 0.3s;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .btn-reserve:hover { border-color: var(--rose); color: var(--rose); }
+    .btn-reserve.dark {
+      color: var(--charcoal);
+      border-color: var(--rose-light);
+    }
+    .btn-reserve.dark:hover { border-color: var(--rose); color: var(--rose); }
+
+    .btn-line-official {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #06C755;
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 15px 32px;
+      letter-spacing: 0.08em;
+      border-radius: 4px;
+      transition: all 0.3s;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .btn-line-official:hover { background: #05b04c; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(6,199,85,0.3); }
+
+    .cta-3btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .cta-3btn-sub {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .float-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #06C755;
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 13px 32px;
+      border-radius: 4px;
+      letter-spacing: 0.06em;
+      transition: background 0.2s;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .float-btn:hover { background: #05b04c; }
+
+    .float-btn-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--rose) 0%, var(--rose-mid) 100%);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 13px 24px;
+      border-radius: 4px;
+      letter-spacing: 0.06em;
+      transition: all 0.2s;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      box-shadow: 0 3px 12px rgba(196,116,126,0.3);
+    }
+    .float-btn-main:hover { transform: translateY(-1px); }
+
+    .float-btn-line {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #06C755;
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 12px 18px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      transition: background 0.2s;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .float-btn-line:hover { background: #05b04c; }
+
+    .float-btn-sub {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: transparent;
+      color: rgba(255,255,255,0.6);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 11px 16px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.25);
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .float-btn-sub:hover { color: var(--rose); border-color: var(--rose); }
+
+    /* ─── LINE SVG ─── */
+    .line-icon {
+      width: 20px; height: 20px; flex-shrink: 0;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 860px) {
+      .synergy-grid { grid-template-columns: 1fr; gap: 0; }
+      .synergy-plus { transform: rotate(90deg); margin: 16px auto; }
+      .staff-inner { grid-template-columns: 1fr; }
+      .staff-photo { aspect-ratio: 2/1; max-height: 220px; }
+      .access-grid { grid-template-columns: 1fr; gap: 32px; }
+      .flow-wrap { grid-template-columns: 1fr 1fr; }
+      .flow-step:nth-child(2)::after,
+      .flow-step:nth-child(4)::after { display: none; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 0 18px; }
+      .nav-back { display: none; }
+      .hero { padding: 56px 24px 80px; min-height: 88vh; }
+      .trust-bar { gap: 20px; padding: 16px 18px; }
+      .trust-item .trust-icon { display: none; }
+      section { padding: 64px 18px; }
+      .pain-grid { grid-template-columns: 1fr; }
+      .flow-wrap { grid-template-columns: 1fr; }
+      .flow-step::after { display: none; }
+      .synergy-result { grid-template-columns: 1fr 1fr; }
+      .float-bar-info { display: none; }
+      .btn-reserve-main { width: 100%; min-width: unset; font-size: 16px; padding: 18px 24px; }
+      .cta-3btn-sub { flex-direction: column; width: 100%; }
+      .btn-reserve, .btn-line-official { width: 100%; justify-content: center; }
+      .menu-table thead { display: none; }
+      .menu-table tbody tr { display: block; padding: 16px 0; border-bottom: 1px solid var(--rose-light); }
+      .menu-table tbody td { display: block; border: none; padding: 4px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    Body<span class="nav-logo-accent">Nate</span>
+    <span class="nav-logo-sub">整体 × ピラティス</span>
+  </div>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">← トップへ</a>
+    <a href="https://line.me/R/ti/p/@bodynate" class="nav-cta">LINEで予約</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- botanical deco -->
+  <svg class="hero-deco" viewBox="0 0 200 300" fill="none">
+    <path d="M100 280 C100 280 40 220 40 160 C40 100 70 60 100 20" stroke="white" stroke-width="1.5" fill="none"/>
+    <path d="M100 200 C100 200 60 180 50 150" stroke="white" stroke-width="1" fill="none"/>
+    <path d="M100 240 C100 240 140 210 150 180" stroke="white" stroke-width="1" fill="none"/>
+    <path d="M100 160 C100 160 55 135 48 105" stroke="white" stroke-width="1" fill="none"/>
+    <path d="M100 140 C100 140 148 120 155 90" stroke="white" stroke-width="1" fill="none"/>
+    <circle cx="48" cy="103" r="4" fill="white"/>
+    <circle cx="155" cy="88" r="4" fill="white"/>
+    <circle cx="49" cy="148" r="3" fill="white"/>
+    <circle cx="151" cy="178" r="3" fill="white"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-badges">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        理学療法士在籍
+      </div>
+      <div class="hero-badge rose">
+        <span class="hero-badge-dot"></span>
+        女性専用サロン
+      </div>
+    </div>
+
+    <h1>
+      <span class="en">Seitai × Pilates — Body Reset Program</span>
+      骨格を整え、<br>
+      体幹を<span class="accent-rose">育てる</span>。<br>
+      <span class="accent-gold">本来の自分</span>を取り戻す。
+    </h1>
+
+    <div class="hero-divider"></div>
+
+    <p class="hero-sub">
+      整体で「歪み・コリ・痛み」を根本から解放し、<br>
+      ピラティスで「体幹・姿勢・ボディライン」を育てる。<br>
+      この2つが揃ったとき、体は本当に変わりはじめます。
+    </p>
+
+    <div class="cta-3btn">
+      <a href="https://bodynate.stores.jp" class="btn-reserve-main">
+        今すぐ予約する →
+      </a>
+      <div class="cta-3btn-sub">
+        <a href="https://bodynate.stores.jp" class="btn-reserve">予約する</a>
+        <a href="https://line.me/R/ti/p/@bodynate" class="btn-line-official">
+          <svg class="line-icon" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.05 2 11.05c0 3.42 2.01 6.41 5.03 8.16-.18.65-.67 2.38-.77 2.74-.12.43.16.43.34.31.14-.09 2.22-1.47 3.12-2.07.73.1 1.48.16 2.28.16 5.52 0 10-4.05 10-9.05C22 6.05 17.52 2 12 2z"/></svg>
+          公式LINEから予約する
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-trial">
+      <div>
+        <div class="hero-trial-label">初回体験価格</div>
+        <div class="hero-trial-orig">通常 ¥10,000</div>
+      </div>
+      <div class="hero-trial-price">¥1,100</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-icon">🎓</div>
+    <div class="trust-text">
+      <strong>理学療法士</strong>国家資格取得
+    </div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🌸</div>
+    <div class="trust-text">
+      <strong>女性専用</strong>完全プライベート空間
+    </div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">📍</div>
+    <div class="trust-text">
+      <strong>阪急烏丸駅</strong>徒歩4分
+    </div>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<div class="philosophy">
+  <p class="philosophy-kana">CONCEPT</p>
+  <p class="philosophy-quote">
+    痛みなく、<span class="ar">自信を持って</span>動ける体で。<br>
+    どんなライフスタイルでも、<span class="ag">輝き続ける</span>女性へ。
+  </p>
+  <p class="philosophy-sub">BodyNate 四条烏丸店 — Women's Body Care Salon</p>
+</div>
+
+<!-- PAIN POINTS -->
+<section class="pain">
+  <div class="section-inner">
+    <p class="eyebrow">Your Trouble</p>
+    <h2 class="section-title">こんなお悩み、<span class="ar">ありませんか？</span></h2>
+    <div class="divider"><div class="divider-gem"></div></div>
+
+    <p class="pain-intro">
+      「マッサージに行っても翌日には戻る」<br>
+      「運動しようとしても続かない、どこか痛い」<br>
+      そのお悩み、表面だけのケアでは解決しません。
+    </p>
+
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-check"></div>
+        <span class="pain-text">肩こり・腰痛が慢性的に続いている</span>
+      </div>
+      <div class="pain-card">
+        <div class="pain-check"></div>
+        <span class="pain-text">骨盤の歪み・左右差が気になる</span>
+      </div>
+      <div class="pain-card">
+        <div class="pain-check"></div>
+        <span class="pain-text">姿勢が悪くなってきた、猫背が気になる</span>
+      </div>
+      <div class="pain-card">
+        <div class="pain-check"></div>
+        <span class="pain-text">産後から体の不調・体型の崩れが続いている</span>
+      </div>
+      <div class="pain-card">
+        <div class="pain-check"></div>
+        <span class="pain-text">運動したいが体が痛くて踏み出せない</span>
+      </div>
+      <div class="pain-card">
+        <div class="pain-check"></div>
+        <span class="pain-text">ジムに行っても体のラインが変わらない</span>
+      </div>
+    </div>
+
+    <div class="pain-answer">
+      <p class="pain-answer-label">THE REASON</p>
+      <p class="pain-answer-text">
+        それは「<span class="ar">骨格の歪み</span>」と「<span class="ag">体幹の弱さ</span>」が<br>
+        同時に存在しているからです。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SYNERGY -->
+<section class="synergy">
+  <div class="section-inner">
+    <p class="eyebrow">Why Both</p>
+    <h2 class="section-title">整体 <span class="ar">×</span> ピラティスが<br><span class="ag">最強の理由</span></h2>
+    <div class="divider"><div class="divider-gem"></div></div>
+
+    <div class="synergy-grid">
+      <div class="synergy-card rose">
+        <div class="synergy-card-eyebrow">SEITAI — 整体</div>
+        <div class="synergy-card-title">歪みをリセットする</div>
+        <ul class="synergy-card-list">
+          <li>骨格・骨盤を正しい位置に戻す</li>
+          <li>筋膜・関節へのアプローチで根本改善</li>
+          <li>コリ・痛み・不調を取り除く</li>
+          <li>理学療法士が一人ひとりに合わせた施術</li>
+        </ul>
+      </div>
+
+      <div class="synergy-plus">
+        <span class="synergy-plus-text">＋</span>
+      </div>
+
+      <div class="synergy-card gold">
+        <div class="synergy-card-eyebrow">PILATES — ピラティス</div>
+        <div class="synergy-card-title">体幹で支えられる体をつくる</div>
+        <ul class="synergy-card-list">
+          <li>インナーマッスルを目覚めさせる</li>
+          <li>正しい姿勢を「保てる筋力」を育てる</li>
+          <li>しなやかなボディラインへ</li>
+          <li>少人数制で個別フォーム指導</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="synergy-result">
+      <div class="synergy-result-item">
+        <div class="synergy-result-num">97<span>%</span></div>
+        <div class="synergy-result-label">お客様満足度</div>
+      </div>
+      <div class="synergy-result-item">
+        <div class="synergy-result-num">3<span>回</span></div>
+        <div class="synergy-result-label">体の変化を実感するまで</div>
+      </div>
+      <div class="synergy-result-item">
+        <div class="synergy-result-num">2<span>つ</span></div>
+        <div class="synergy-result-label">整体×ピラティスの相乗効果</div>
+      </div>
+      <div class="synergy-result-item">
+        <div class="synergy-result-num">100<span>%</span></div>
+        <div class="synergy-result-label">女性専用・完全個室</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAFF -->
+<section class="staff">
+  <div class="section-inner">
+    <p class="eyebrow">Therapist</p>
+    <h2 class="section-title">担当セラピスト</h2>
+    <div class="divider"><div class="divider-gem"></div></div>
+
+    <div class="staff-inner">
+      <div class="staff-photo">
+        <div class="staff-photo-bar"></div>
+        <div class="staff-photo-icon">🌿</div>
+        <span>スタッフ写真</span>
+      </div>
+      <div>
+        <div class="staff-license">
+          <div class="staff-license-icon"></div>
+          <span class="staff-license-text">理学療法士 国家資格取得</span>
+        </div>
+        <div class="staff-name">ちさ</div>
+        <div class="staff-name-en">Chisa</div>
+        <div class="staff-tags">
+          <span class="staff-tag">理学療法士</span>
+          <span class="staff-tag">整体</span>
+          <span class="staff-tag">ピラティス指導</span>
+          <span class="staff-tag">産後ケア</span>
+          <span class="staff-tag">姿勢改善</span>
+        </div>
+        <div class="staff-message">
+          <span class="quote">
+            「痛みのない体で、<span class="ar">好きなことを全力で楽しめる</span><br>
+            女性を増やしたい。」
+          </span>
+          理学療法士として培った知識と技術を活かし、骨格・筋膜・体幹のすべてにアプローチします。「整体で整え、ピラティスで鍛える」この2ステップで、表面ではなく根本から体を変えていきます。お一人おひとりの体の状態・ライフスタイルに合わせた施術を心がけていますので、どうぞ安心してお体を委ねてください。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section class="voice">
+  <div class="section-inner">
+    <p class="eyebrow">Customer Voice</p>
+    <h2 class="section-title">お客様の<span class="ar">声</span></h2>
+    <div class="divider"><div class="divider-gem"></div></div>
+
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="voice-tag">産後ケア / 整体</div>
+        <div class="voice-result">産後から続いた腰痛が3回で楽になりました</div>
+        <p class="voice-text">
+          産後から骨盤の歪みと腰痛がずっと続いていました。他のマッサージでは「また翌日に戻る」を繰り返していたのに、BodyNateでは施術後の軽さが全然違いました。ちさ先生が丁寧に話を聞いてくれるので、安心して毎回通えています。
+        </p>
+        <p class="voice-meta">30代・産後9ヶ月 / 継続通院中</p>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-tag">姿勢改善 / ピラティス</div>
+        <div class="voice-result">2ヶ月でデスクワークの肩こりがほぼ解消</div>
+        <p class="voice-text">
+          デスクワーク歴10年で肩こりと猫背がひどく、ピラティスを始めました。整体で骨格を整えてからトレーニングするという流れが体にすごく合っていて、2ヶ月で姿勢が変わってきたと周りにも言われました。理学療法士の先生というのも信頼感が高かったです。
+        </p>
+        <p class="voice-meta">40代・デスクワーク / 月3回ご来店</p>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-tag">ボディライン / 整体×ピラティス</div>
+        <div class="voice-result">体のラインが変わって洋服が楽しくなった</div>
+        <p class="voice-text">
+          運動は苦手で続いたことがなかったのですが、BodyNateのピラティスは「できないことを気にしなくていい」雰囲気があってびっくりするくらい続いています。3ヶ月でウエストのラインが変わって、着られなかった服が着られるようになりました。
+        </p>
+        <p class="voice-meta">20代・運動初心者 / 週1回通院</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<div class="mid-cta">
+  <p class="mid-cta-title">まずは、<span class="ar">初回体験</span>からどうぞ。</p>
+  <p class="mid-cta-sub">
+    LINEでお気軽にご相談ください。<br>
+    質問・不安だけでも、大歓迎です。
+  </p>
+  <div class="cta-3btn">
+    <a href="https://bodynate.stores.jp" class="btn-reserve-main">今すぐ予約する →</a>
+    <div class="cta-3btn-sub">
+      <a href="https://bodynate.stores.jp" class="btn-reserve">予約する</a>
+      <a href="https://line.me/R/ti/p/@bodynate" class="btn-line-official">
+        <svg class="line-icon" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.05 2 11.05c0 3.42 2.01 6.41 5.03 8.16-.18.65-.67 2.38-.77 2.74-.12.43.16.43.34.31.14-.09 2.22-1.47 3.12-2.07.73.1 1.48.16 2.28.16 5.52 0 10-4.05 10-9.05C22 6.05 17.52 2 12 2z"/></svg>
+        公式LINEから予約する
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MENU -->
+<section class="menu" id="menu">
+  <div class="section-inner">
+    <p class="eyebrow gold">Menu &amp; Price</p>
+    <h2 class="section-title">メニュー・<span class="ag">料金</span></h2>
+    <div class="divider"><div class="divider-gem"></div></div>
+
+    <table class="menu-table">
+      <thead>
+        <tr>
+          <th style="width:48%">メニュー</th>
+          <th style="width:18%">時間</th>
+          <th style="width:34%">料金（税込）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="menu-name">初回体験コース（整体）<span class="menu-badge-rec">おすすめ</span></div>
+            <div class="menu-desc">カウンセリング＋全身整体。初めての方専用。</div>
+          </td>
+          <td><span class="menu-time">60分</span></td>
+          <td>
+            <div class="menu-price-orig">通常 ¥10,000</div>
+            <div class="menu-price">¥1,100</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="menu-name">初回体験コース（ピラティス）<span class="menu-badge-new">初回限定</span></div>
+            <div class="menu-desc">カウンセリング＋体験レッスン。ピラティス未経験OK。</div>
+          </td>
+          <td><span class="menu-time">60分</span></td>
+          <td>
+            <div class="menu-price-orig">通常 ¥9,900</div>
+            <div class="menu-price gold">¥3,980</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="menu-name">整体 × ピラティス セット<span class="menu-badge-rec">人気No.1</span></div>
+            <div class="menu-desc">整体で整えてからトレーニング。最大効果を実感できるセット。</div>
+          </td>
+          <td><span class="menu-time">90分</span></td>
+          <td>
+            <div class="menu-price-orig">通常 ¥18,700</div>
+            <div class="menu-price">¥16,500</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="menu-name">全身整体コース</div>
+            <div class="menu-desc">骨格・骨盤・姿勢を全身まとめてアプローチ。</div>
+          </td>
+          <td><span class="menu-time">60分</span></td>
+          <td><div class="menu-price">¥8,800</div></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="menu-name">マットピラティス（パーソナル）</div>
+            <div class="menu-desc">個別指導でインナーマッスルを丁寧に鍛えます。</div>
+          </td>
+          <td><span class="menu-time">50分</span></td>
+          <td><div class="menu-price gold">¥9,900</div></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="menu-name">産後ケアコース</div>
+            <div class="menu-desc">産後の骨盤・体幹を優しく丁寧に整えます。</div>
+          </td>
+          <td><span class="menu-time">60分</span></td>
+          <td><div class="menu-price">¥9,900</div></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="menu-note">※ 料金はすべて税込。初回の方はカウンセリング料込みです。</p>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow">
+  <div class="section-inner-sm">
+    <p class="eyebrow">How to Start</p>
+    <h2 class="section-title">予約から<span class="ar">当日</span>まで</h2>
+    <div class="divider"><div class="divider-gem"></div></div>
+    <div class="flow-wrap">
+      <div class="flow-step">
+        <div class="flow-num-circle"><span class="flow-num-text">01</span></div>
+        <div class="flow-title">LINEで連絡</div>
+        <p class="flow-desc">気になることを気軽にメッセージ。希望日時をお伝えください。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num-circle"><span class="flow-num-text">02</span></div>
+        <div class="flow-title">日程確定</div>
+        <p class="flow-desc">空き状況をお伝えし、一緒に日時を決めます。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num-circle"><span class="flow-num-text">03</span></div>
+        <div class="flow-title">カウンセリング</div>
+        <p class="flow-desc">お悩み・目標を丁寧にヒアリング。施術計画を設計します。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num-circle"><span class="flow-num-text">04</span></div>
+        <div class="flow-title">施術スタート</div>
+        <p class="flow-desc">あなただけのプログラムで、体の変化を実感してください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-inner-sm">
+    <p class="eyebrow">FAQ</p>
+    <h2 class="section-title">よくある<span class="ar">ご質問</span></h2>
+    <div class="divider"><div class="divider-gem"></div></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-badge">Q</div>整体とピラティス、どちらから始めればいいですか？</div>
+        <div class="faq-a">まずは整体からお試しいただくことをお勧めしています。骨格の状態を把握した上でピラティスを組み合わせると、より効果的です。迷っている方はLINEでご相談ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-badge">Q</div>痛い施術はありますか？</div>
+        <div class="faq-a">強い圧迫を伴う施術は行いません。お体の状態に合わせて丁寧に調整しながら進めますので、安心してお体を委ねていただけます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-badge">Q</div>ピラティスは運動が苦手でも大丈夫ですか？</div>
+        <div class="faq-a">はい、大丈夫です。ピラティスは「できる動き」から始めます。少人数制で個別指導ですので、運動未経験の方もご安心ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-badge">Q</div>産後でも通えますか？</div>
+        <div class="faq-a">はい、産後ケアに特化したコースもご用意しています。骨盤・体幹・ボディラインを優しく整えます。産後いつから通えるかはお体の状態によりますので、まずLINEでご相談ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-badge">Q</div>男性の入店はできますか？</div>
+        <div class="faq-a">BodyNate 四条烏丸店は女性専用サロンです。女性のお客様に安心してご来院いただける環境づくりのため、男性のご入店はご遠慮いただいております。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-badge">Q</div>勧誘や物販の押し売りはありますか？</div>
+        <div class="faq-a">一切ありません。施術の継続も、追加メニューも、すべてお客様のご意志を尊重します。ご安心してご来院ください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CTA -->
+<section class="main-cta">
+  <div class="main-cta-deco"></div>
+  <div class="main-cta-inner">
+    <p class="main-cta-eyebrow">LINE RESERVATION</p>
+    <h2 class="main-cta-title">
+      あなたが一番<span class="ar">好きな自分</span>に、<br>
+      なれる場所が<span class="ag">ここにあります</span>。
+    </h2>
+    <div class="main-cta-divider"><div class="main-cta-divider-dot"></div></div>
+    <div class="main-cta-price-box">
+      <div class="main-cta-price-label">初回体験価格</div>
+      <div class="main-cta-price-orig">通常 ¥10,000</div>
+      <div class="main-cta-arrow">→</div>
+      <div class="main-cta-price-new"><sup>¥</sup>1,100<sub>（税込）</sub></div>
+    </div>
+    <div class="cta-3btn">
+      <a href="https://bodynate.stores.jp" class="btn-reserve-main">今すぐ予約する →</a>
+      <div class="cta-3btn-sub">
+        <a href="https://bodynate.stores.jp" class="btn-reserve">予約する</a>
+        <a href="https://line.me/R/ti/p/@bodynate" class="btn-line-official">
+          <svg class="line-icon" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.05 2 11.05c0 3.42 2.01 6.41 5.03 8.16-.18.65-.67 2.38-.77 2.74-.12.43.16.43.34.31.14-.09 2.22-1.47 3.12-2.07.73.1 1.48.16 2.28.16 5.52 0 10-4.05 10-9.05C22 6.05 17.52 2 12 2z"/></svg>
+          公式LINEから予約する
+        </a>
+      </div>
+    </div>
+    <p class="main-cta-note">
+      友だち追加後にメッセージを送るだけで予約完了。<br>
+      質問・相談だけでも大歓迎です。勧誘は一切ありません。
+    </p>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section class="access">
+  <div class="section-inner">
+    <p class="eyebrow">Access</p>
+    <h2 class="section-title">アクセス</h2>
+    <div class="divider"><div class="divider-gem"></div></div>
+    <div class="access-grid">
+      <div>
+        <div class="access-name">BodyNate 四条烏丸店</div>
+        <ul class="access-list">
+          <li><span class="al">住所</span><span class="av">〒600-8492<br>京都府京都市下京区四条通新町東入ル月鉾町39-1<br>四条烏丸大西ビル 702号</span></li>
+          <li><span class="al">電話</span><span class="av">070-2475-5207</span></li>
+          <li><span class="al">最寄駅</span><span class="av">阪急烏丸駅 徒歩4分</span></li>
+          <li><span class="al">駐車場</span><span class="av">なし</span></li>
+          <li><span class="al">営業時間</span><span class="av">
+            月・水〜金　9:00 〜 21:00<br>
+            土　　　　　9:00 〜 21:00<br>
+            日　　　　　9:00 〜 19:00<br>
+            定休日：火曜日
+          </span></li>
+        </ul>
+      </div>
+      <div class="access-map">MAP</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Body<span>Nate</span></div>
+  <div class="footer-sub">四条烏丸店 — Women's Body Care Salon</div>
+  <a href="index.html" class="footer-back">← トップページに戻る</a>
+  <div class="footer-copy">&copy; 2025 BodyNate 四条烏丸店. All rights reserved.</div>
+</footer>
+
+<!-- FLOAT BAR -->
+<div class="float-bar" id="floatBar">
+  <div class="float-bar-info">
+    <div class="float-bar-label">初回体験</div>
+    <div class="float-bar-price">¥1,100</div>
+  </div>
+  <a href="https://bodynate.stores.jp" class="float-btn-main">今すぐ予約する</a>
+  <a href="https://bodynate.stores.jp" class="float-btn-sub">予約する</a>
+  <a href="https://line.me/R/ti/p/@bodynate" class="float-btn-line">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.05 2 11.05c0 3.42 2.01 6.41 5.03 8.16-.18.65-.67 2.38-.77 2.74-.12.43.16.43.34.31.14-.09 2.22-1.47 3.12-2.07.73.1 1.48.16 2.28.16 5.52 0 10-4.05 10-9.05C22 6.05 17.52 2 12 2z"/></svg>
+    公式LINE
+  </a>
+</div>
+
+<script>
+  const bar = document.getElementById('floatBar');
+  window.addEventListener('scroll', () => {
+    bar.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+</script>
+
+</body>
+</html>
