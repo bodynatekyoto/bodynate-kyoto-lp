@@ -668,7 +668,30 @@
       section { padding: 64px 20px; }
       .sp-br { display: block; }
       .hero h1 .en { letter-spacing: 0.12em; }
-      .hero { padding: 60px 24px 80px; }
+
+      /* ── HERO: モバイルで全画像表示 ── */
+      .hero {
+        /* 写真を上部に全幅表示し、グラデーションで文字エリアにフェード */
+        background:
+          linear-gradient(
+            to bottom,
+            rgba(42,42,42,0.08) 0,
+            rgba(42,42,42,0.08) 44vw,
+            rgba(42,42,42,0.82) 62vw,
+            rgba(42,42,42,0.97) 72vw,
+            rgba(42,42,42,0.97) 100%
+          ),
+          url('images/hero2.png') top center / 100% auto no-repeat;
+        background-color: var(--charcoal);
+        display: block;          /* flex → block でテキストを画像下に配置 */
+        min-height: unset;
+        padding: 0 24px 56px;
+      }
+      .hero-botanical { display: none; }
+      .hero-inner {
+        padding-top: 54vw;       /* 画像の高さ(66.7vw)より少し手前から文字 */
+        max-width: 100%;
+      }
     }
   </style>
 </head>
