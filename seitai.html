@@ -1543,6 +1543,46 @@
       .menu-table tbody tr { display: block; padding: 16px 0; border-bottom: 1px solid var(--rose-light); }
       .menu-table tbody td { display: block; border: none; padding: 4px 0; }
     }
+
+    /* ─── SCARCITY BAR ─── */
+    .scarcity-wrap { margin-top: 16px; }
+    .scarcity-track {
+      height: 3px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+    .scarcity-fill {
+      height: 100%;
+      width: 40%;
+      background: var(--rose);
+      border-radius: 2px;
+    }
+    .scarcity-text {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+    .scarcity-text strong { color: #FFD88A; font-weight: 700; }
+
+    /* ─── NO PUSH NOTE ─── */
+    .no-push-note {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 640px) {
+      .hero .cta-2btn { margin-bottom: 10px; }
+      .hero .scarcity-wrap, .hero .no-push-note { padding: 0 20px; }
+      .hero .no-push-note { margin-bottom: 36px; }
+    }
   </style>
 </head>
 <body>
@@ -1614,6 +1654,11 @@
         LINEで予約する
       </a>
     </div>
+    <div class="scarcity-wrap">
+      <div class="scarcity-track"><div class="scarcity-fill"></div></div>
+      <p class="scarcity-text">今月の残り予約枠 <strong>残り3名</strong>（月5名限定）</p>
+    </div>
+    <p class="no-push-note">★ 勧誘・物販の押し売りは一切ありません</p>
   </div>
 </section>
 
